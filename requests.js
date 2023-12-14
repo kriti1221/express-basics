@@ -9,6 +9,8 @@ server.get('/', (req, res) => {
     res.send("welcome to get request");
 });
 
+server.use(express.static('public'));
+
 server.post('/', (req, res) => {
     res.status(201).send("welcome to post request");
 });
