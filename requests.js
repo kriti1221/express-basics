@@ -1,5 +1,6 @@
 const express = require('express');
 
+
 const server = express();
 
 
@@ -10,6 +11,9 @@ server.get('/', (req, res) => {
 });
 
 server.use(express.static('public'));
+server.get('/home', function (req, res) {
+    res.sendFile('home.html', { root: 'public' })
+});
 
 server.post('/', (req, res) => {
     res.status(201).send("welcome to post request");
